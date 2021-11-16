@@ -1,0 +1,100 @@
+body {
+  background-image: url('bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.associalmedia1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+svg,
+a,button {
+    color: white !important;
+}
+
+.btn{
+    margin: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #494747;
+}
+
+.STEM-svg {
+    position: fixed;
+    bottom: 0;
+    margin-left: -20px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: white;
+}
+
+/*.modal-dialog{
+    width: 100%;
+}
+.modal-content{
+    max-height: 100%;
+}
+@media only screen and (min-width: 769px){
+    .modal-dialog{
+        display: block;
+        margin: auto auto;
+    }
+    iframe{
+        height: 350px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px){
+    .modal-dialog{
+        display: block;
+        margin: auto auto;
+    }
+    iframe{
+        height: 350px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .modal-dialog{
+        display: block;
+        margin: auto auto;
+    }
+    iframe{
+        height: 350px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    #sidebar-col {
+        width: 69px !important;
+    }
+
+    svg {
+        height: 32px !important;
+        width: 32px !important;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #sidebar-col {
+        width: 150px !important;
+    }
+
+    svg {
+        height: 69px !important;
+        width: 69px !important;
+    }
+}*/

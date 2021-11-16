@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVTPBS</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="welcome" id="welcome">
+        <h1>East Visayan Tour and Events Payment and Booking System</h1>
+        <span>Powered by Gatescape</span><br>
+        <button onclick="open_form()">Book Passenger</button> 
+        <button onclick="open_record()">View Booking Records</button>
+    </div>
+    <div>
+        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" id="input_form">
+                    <div class="input_item">
+                        <label>Name</label>
+                        <input type="text" name="fullName" id="fullName" required pattern="[A-Za-z ]{5,20}" placeholder="Name" oninvalid="this.setCustomValidity('Name should only contain letters. e.g. john \n Minimum of 5 letters\n No punctuations and digits are allowed aside from space and dot.')"
+                        oninput="this.setCustomValidity('')">
+                    </div>
+                    <div class="input_item">
+                        <label>Destination:</label>
+                        <Select id="des" onChange="selectItem(this);" required>
+                            <optgroup label="From Tacloban to ...">
+                                <option disabled hidden selected value="">Choose Destination</option>
+                                <option value="30">Palo</option>
+                                <option value="70">Tanauan</option>
+                                <option value="100">Dulag</option>
+                                <option value="130">Mayorga</option>
+                                <option value="160">Javier</option>
+                                <option value="200">Abuyog</option>
+                                <option value="250">Mahaplag</option>
+                                <option value="300">Sogod</option>
+                            </optgroup>
+                            <optgroup label="From Sogod to ...">
+                                <option value="130">Mahaplag</option>
+                                <option value="180">Abuyog</option>
+                                <option value="200">Javier</option>
+                                <option value="220">Mayorga</option>
+                                <option value="235">Dulag</option>
+                                <option value="250">Tanauan</option>
+                                <option value="280">Palo</option>
+                                <option value="300">Tacloban</option>
+                            </optgroup>
+                        </Select>
+                    </div>
+                    <div class="input_item">
+                        <label>No. of Passenger</label>
+                        <input type="number" name="seats" id="seats" min="1" max="12" required oninvalid="this.setCustomValidity('Cannot be left blank \n Greater or equal to 1\nLess than or equal to 12\n positive numbers only')"
+                        oninput="this.setCustomValidity('')" placeholder="Input number of passenger">
+                    </div>
+                    <div class="input_item">
+                        <label>Discounts: </label><br>
+                        <input type="checkbox" name="no_discount" id="no_discount" onclick="discount()">
+                        <label for="no_discount">None</label><br>
+                        <div id="dis">
+                            <input type="checkbox" name="Senior" id="Senior" onclick="discount1()">
+                            <label for="Senior">Senior Citizens</label><br>
+                            <input type="number" id="senior_count" placeholder="How many Senior Citizens?" min="1" max="12" oninvalid="this.setCustomValidity('Cannot be left blank \nCannot be greater than declared passenger\n positive numbers only')"
+                            oninput="this.setCustomValidity('')">
+                            <input type="checkbox" name="pwd" id="pwd" onclick="discount2()">
+                            <label for="pwd">PWD</label><br>
+                            <input type="number" id="pwd_count" placeholder="How many PWD?" min="1" max="12" oninvalid="this.setCustomValidity('Cannot be left blank \nCannot be greater than declared passenger\n positive numbers only')"
+                            oninput="this.setCustomValidity('')">
+                            <input type="checkbox" name="std" id="std" onclick="discount3()">
+                            <label for="std">Students</label><br>
+                            <input type="number" id="std_count" placeholder="How many Students?" min="1" max="12" oninvalid="this.setCustomValidity('Cannot be left blank \nCannot be greater than declared passenger\n positive numbers only')"
+                            oninput="this.setCustomValidity('')"> 
+                        </div>
+                        
+                    </div>
+                    <div class="input_item">
+                        <label for="tm">Time of Departure:*</label>
+                        <select name="tm" id="tm" required>
+                            <option disabled hidden selected value="" >Choose Time</option>
+                            <option value="5:00AM">5:00AM</option>
+                            <option value="5:45AM">5:45AM</option>
+                            <option value="6:30AM">6:30AM</option>
+                            <option value="7:15AM">7:15AM</option>
+                            <option value="8:00AM">8:00AM</option>
+                            <option value="8:45AM">8:45AM</option>
+                            <option value="9:30AM">9:30AM</option>
+                            <option value="10:15AM">10:15AM</option>
+                            <option value="11:00AM">11:00AM</option>
+                            <option value="11:45AM">11:45AM</option>
+                            <option value="12:30PM">12:30PM</option>
+                            <option value="1:15PM">1:15PM</option>
+                            <option value="2:00PM">2:00PM</option>
+                            <option value="2:45PM">2:45PM</option>
+                            <option value="3:30PM">3:30PM</option>
+                            <option value="4:15PM">4:15PM</option>
+                            <option value="5:00PM">5:00PM</option>
+                        </select>
+                    </div>
+                    <div class="input_item">
+                        <label for="date_dep">Date of Departure:*</label>
+                        <input type="date" name="date_dep" id="date_dep" required>
+                    </div>
+                    <div class="input_item">
+                        <label>Vehicle Class Type:</label>
+                        <input type="radio" name="cls1" id="cls1" onclick="selectclass()" required oninvalid="this.setCustomValidity('Pick the type of Van')"
+                        oninput="this.setCustomValidity('')">
+                        <label for="cls1">Economy Van</label>
+                        <input type="radio" name="cls1" id="cls2" onclick="selectclass()">
+                        <label for="cls2">Business Van</label>
+                    </div>
+                    <div class="input_item">
+                        <label for="phone">Contact Number:* </label>
+                        <input type="tel" name="phone" id="phone" pattern="09[0-9]{9}" required oninvalid="this.setCustomValidity('Cannot be left blank \nStarts with `09`')"
+                        oninput="this.setCustomValidity('')" placeholder="096521......">
+                    </div>
+                    <div class="input_item">
+                        <label for="phone">Email: </label>
+                        <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email">
+                    </div>
+                    <div class="input_item">
+                        <label for="phone">Payment: </label>
+                        <input type="number" name="pay" id="pay" pattern="[0-9]" placeholder="Input amount">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="button" value="Cancel" onclick="return_home()" >
+                        <input type="submit" value="Book">
+                    </div>
+                </form>
+    </div>
+    <div id="list">
+        <button onclick="return_home()"><span><-Back</span></button>
+        
+        <table class="list" id="book_list">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Destination</th>
+                            <th>Passenger</th>
+                            <th>Discounts</th>
+                            <th>Time of Departure</th>
+                            <th>Date of Departure</th>
+                            <th>Vehicle Class</th>
+                            <th>Contact Number</th>
+                            <th>Email</th>
+                            <th>Total Fare</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

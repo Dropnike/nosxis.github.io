@@ -1,0 +1,137 @@
+var quest = 
+["This includes routine activities that keep a home clean, safe and well-organized.","This refers to the regular collection, grading and sorting of scrap contribute to good housekeeping practices.","They are the one who is responsible for administering housekeeping maintenance.","It applies to housekeeping maintenance in commercial lodging establishments like hotels, resorts and inns.","It is a surfactant or a mixture of surfactants with cleaning properties in diluted solutions used in cleaning purposes."];
+
+var qlvl = 0;
+var score=0;
+var n = 50;
+var answer;
+function startfunc() {
+    document.getElementById("container").style.display = "block";
+    document.getElementById("start_btn").style.display = "none";
+    questionaire();
+}
+function questionaire() {
+    document.getElementById("next_btn").style.display = "none";
+    document.getElementById("answer_key").style.display = "none";
+    enable();
+    var rand = Math.floor(Math.random() * n); 
+    var quest_value;
+    var c1;
+    var c2;
+    var c3;
+    var c4;
+    switch (rand) {
+        case 0:
+            c1= "Cleaning";
+            c2= "Household Chores";
+            c3= "Housekeeping";
+            c4= "Decluttering";
+            answer = c3;
+            break;
+        case 1:
+            c1= "Surfaces";
+            c2= "Waste Disposal";
+            c3= "Storing Wastes";
+            c4= "Waste Management";
+            answer = c2;
+            break;
+        case 2:
+            c1= "Janitor";
+            c2= "Organization Maintenance";
+            c3= "Housekeeper";
+            c4= "Trainess";
+            answer = c3;
+            break;
+        case 3:
+            c1= "Domestic Housekeeping";
+            c2= "Housekeeping Services";
+            c3= "Institutional Housekeeping";
+            c4= "Hotel Management";
+            answer = c3;
+            break;
+        case 4:
+            c1= "Cleaning Detergent";
+            c2= "Brine Solution";
+            c3= "Liquid detergent";
+            c4= "liqiud sosa";
+            answer = c1;
+            break;
+        default:
+            break;
+    }
+    quest_value = quest[rand];
+    document.getElementById("question_display").innerHTML = quest_value;
+    document.getElementById("ch1").innerHTML = c1;
+    document.getElementById("ch2").innerHTML = c2;
+    document.getElementById("ch3").innerHTML = c3;
+    document.getElementById("ch4").innerHTML = c4;
+}
+function check(ans) {
+    
+    var choice;
+    document.getElementById("answer_key").innerHTML = "Correct answer: " + answer;
+    document.getElementById("answer_key").style.display = "block";
+
+    switch (ans) {
+        case 1:
+            choice = document.getElementById("ch1").innerHTML;
+            document.getElementById("question_display").innerHTML = choice;
+            if (choice==answer) {
+                alert("You Answered Correctly");
+                score+=1;
+            }
+            else{
+                alert("Wrong Answer!");
+            }
+
+            break;
+        case 2:
+            choice = document.getElementById("ch2").innerHTML;
+            document.getElementById("question_display").innerHTML = choice;
+            if (choice==answer) {
+                alert("You Answered Correctly");
+                score+=1;
+            }
+            else{
+                alert("Wrong Answer!");
+            }
+            break;
+        case 3:
+            choice = document.getElementById("ch3").innerHTML;
+            document.getElementById("question_display").innerHTML = choice;
+            if (choice==answer) {
+                alert("You Answered Correctly");
+                score+=1;
+            }
+            else{
+                alert("Wrong Answer!");
+            }
+    break;
+        case 4:
+            choice = document.getElementById("ch4").innerHTML;
+            document.getElementById("question_display").innerHTML = choice;
+            if (choice==answer) {
+                alert("You Answered Correctly");
+                score+=1;
+            }
+            else{
+                alert("Wrong Answer!");
+            }
+    break;
+    }
+    disable();
+    document.getElementById("next_btn").style.display = "block";
+}
+
+function disable() {
+    document.getElementById("btn_choice1").disabled = true;
+    document.getElementById("btn_choice2").disabled = true;
+    document.getElementById("btn_choice3").disabled = true;
+    document.getElementById("btn_choice4").disabled = true;
+}
+function enable() {
+    document.getElementById("btn_choice1").disabled = false;
+    document.getElementById("btn_choice2").disabled = false;
+    document.getElementById("btn_choice3").disabled = false;
+    document.getElementById("btn_choice4").disabled = false;
+}

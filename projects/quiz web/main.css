@@ -1,0 +1,53 @@
+#container{
+    display: none;
+}
+#endscreen{
+    display: none;
+}
+#success_icon{
+    height: 100%;
+}
+.alert{
+    width: 50%;
+    margin: 10px auto;
+    display: none;
+}
+.container{
+    position: relative;
+    height: 700px;
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+}
+.container .row .col button{
+    border-radius: 20px;
+    height: 100px;
+    width: 100%;
+}
+i{
+    margin: 5px;
+}
+.header h1{
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    width: 20%;
+    padding: 5px;
+    backdrop-filter: blur(5px);
+}
+body{
+    background-image: url("img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+.sub_container{
+    text-align: left;
+}
+#explanation{
+    font-size: xx-large;
+}
+.opening{
+    display: block;
+    margin: auto auto;
+    height: 100%;
+}

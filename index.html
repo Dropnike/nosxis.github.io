@@ -19,13 +19,14 @@
     }
 
     body {
-        background-image: url("img/bg.jpg");
-        background-position: center;
+        /* background-image: url("img/bg.jpg"); */
+        background-color: lightslategray;
+        /* background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
-        backdrop-filter: blur(4px);
-        color: white;
-        font-family: "Raleway", sans-serif;
+        background-size: cover; */
+        /* backdrop-filter: blur(4px); */
+        /* color: black; */
+        /* font-family: "Raleway", sans-serif; */
     }
 
     #nav {
@@ -43,12 +44,12 @@
     }
 </style>
 
-<body class="w3-light-grey">
-    <nav class="w3-bar w3-black" id="nav">
+<body >
+    <nav class="w3-bar  w3-gray" id="nav">
         <a href="#home" class="w3-button w3-bar-item">Home</a>
         <a href="Resume.pdf" target="_blank" class="w3-button w3-bar-item">Resume</a>
-        <div class="w3-dropdown-hover">
-            <button class="w3-button w3-black">Website Project</button>
+        <div class="w3-dropdown-hover ">
+            <button class="w3-button w3-gray">Website Project</button>
             <div class="w3-dropdown-content w3-bar-block w3-border">
                 <a href="projects/Website Homepage/Ann/index.html" target="_blank" class="w3-bar-item w3-button">Client
                     Homepage1</a>
@@ -68,7 +69,7 @@
             </div>
         </div>
         <div class="w3-dropdown-hover">
-            <button class="w3-button w3-black">QMS Client</button>
+            <button class="w3-button w3-gray">QMS Client</button>
             <div class="w3-dropdown-content w3-bar-block w3-border">
                 <a href="projects/QMS/blue-counter.html" target="_blank" class="w3-bar-item w3-button">Blue Counter</a>
                 <a href="projects/QMS/white-counter.html" target="_blank" class="w3-bar-item w3-button">White
@@ -83,7 +84,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
         <!-- Header -->
         <header class="w3-container w3-center w3-padding-32">
-            <h1 style="color: white;"><b>MY PORTFOLIO</b></h1>
+            <h1 style="color: black;"><b>MY PORTFOLIO</b></h1>
         </header>
 
         <!-- Grid -->
@@ -92,7 +93,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             <div class="w3-col l4 ">
                 <!-- About Card -->
                 <div class="w3-card w3-margin w3-margin-top soft-edge">
-                    <img src="img/prof.png"
+                    <img src="img/profile.png"
                         style="width:100%; border-top-left-radius: 20px;border-top-right-radius: 20px;">
                     <div class="w3-container w3-white"
                         style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
@@ -107,11 +108,11 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <hr>
 
                 <!-- Posts -->
-                <div class="w3-card w3-margin">
+                <div class=" w3-margin soft-edge">
                     <div class="w3-container w3-padding">
                         <h4 style="color: white;"> <b> Works and Projects </b> </h4>
                     </div>
-                    <ul class="w3-ul w3-hoverable w3-white  soft-edge">
+                    <ul class="w3-ul w3-card w3-hoverable w3-white  soft-edge">
                         <li class="w3-padding-32">
                             <a href="projects/Website Homepage/Ann/index.html" target="_blank"
                                 style="text-decoration: none;">
@@ -169,11 +170,11 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <hr>
 
                 <!-- Labels / tags -->
-                <div class="w3-card w3-margin ">
+                <div class=" w3-margin soft-edge">
                     <div class="w3-container w3-padding">
                         <h4 style="color: white;">Skills</h4>
                     </div>
-                    <div class="w3-container w3-white soft-edge">
+                    <div class="w3-container w3-card w3-white soft-edge">
                         <p><span class="soft-edge w3-tag w3-black w3-margin-bottom">HTML</span> <span
                                 class="soft-edge w3-tag w3-light-grey w3-small w3-margin-bottom">CSS</span> <span
                                 class="soft-edge w3-tag w3-light-grey w3-small w3-margin-bottom">Javascript</span>
@@ -212,7 +213,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                             <div class="w3-col m8 s12">
                                 <a href="projects/Website Homepage/Ann/index.html" target="_blank"
                                     rel="noopener noreferrer" style="text-decoration: none;">
-                                    <p><button class="w3-button w3-padding-large w3-white w3-border soft-edge"><b>Visit
+                                    <p><button class="w3-button w3-card w3-padding-large w3-white w3-border soft-edge"><b>Visit
                                                 Website
                                                 »</b></button></p>
                                 </a>
@@ -221,7 +222,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                         </div>
                     </div>
                 </div>
-                <hr>
+                <br><br><br>
 
                 <!-- Blog entry -->
                 <div class="w3-card-4 w3-margin w3-white w3-padding soft-edge">
@@ -242,7 +243,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                             <div class="w3-col m8 s12">
                                 <a href="projects/EVTPBS/index.html" target="_blank" rel="noopener noreferrer"
                                     style="text-decoration: none;">
-                                    <p><button class="w3-button w3-padding-large w3-white w3-border soft-edge"><b>Demo
+                                    <p><button class="w3-button w3-card w3-padding-large w3-white w3-border soft-edge"><b>Demo
                                                 »</b></button>
                                     </p>
                                 </a>
@@ -263,7 +264,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
     <!-- Footer -->
-    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+    <footer class="w3-container w3-dark-grey  w3-margin-top">
         <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </footer>
 
